@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyListComponent implements OnInit {
 
-  Property: Array<any> = [
+  Properties: Array<any> = [
     {
       "Id":1,
       "Name":"Birla House",
