@@ -18,6 +18,7 @@ export class PropertyListComponent implements OnInit {
         this.properties=data;
         console.log(data)
       }, error => {
+        console.log('httperror:');
         console.log(error);
       }
     )
