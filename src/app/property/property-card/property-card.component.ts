@@ -16,3 +16,5 @@ export class PropertyCardComponent {
     "Price":12000
   }
 }
+
+
