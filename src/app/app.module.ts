@@ -9,9 +9,14 @@ import { PropertyCardComponent } from './property/property-card/property-card.co
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HousingService } from './services/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { RentPropertyComponent } from './property/rent-property/rent-property.component';
+import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 
 const appRoutes: Routes = [
-  {path: 'add-property', component: AddPropertyComponent}
+  {path: '', component: PropertyListComponent},
+  {path: 'rent-property', component: RentPropertyComponent},
+  {path: 'add-property', component: AddPropertyComponent},
+  {path: 'property-detail/:id', component: PropertyDetailComponent}
 ]
 
 @NgModule({
