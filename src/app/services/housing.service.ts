@@ -17,7 +17,7 @@ export class HousingService {
         for (const id in data) {
           if (data.hasOwnProperty(id)) {
           propertiesArray.push(<IProperty>data);
-        }
+          }
         }
         return propertiesArray;
       })
