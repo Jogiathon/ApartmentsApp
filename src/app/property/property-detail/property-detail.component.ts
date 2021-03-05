@@ -8,9 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PropertyDetailComponent implements OnInit {
 
+  public propertyId!: number;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.propertyId = this.route.snapshot.params['id'];
   }
 
 }

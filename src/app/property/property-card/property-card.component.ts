@@ -9,12 +9,8 @@ import { IProperty } from '../IProperty.interface';
   styleUrls: ['./property-card.component.css']
 })
 export class PropertyCardComponent {
-  @Input() Property: IProperty = {
-    "Id": 1,
-    "Name":"Birla House",
-    "Type":"House",
-    "Price":12000
-  }
+  @Input()
+  properties!: IProperty;
 }
 
 

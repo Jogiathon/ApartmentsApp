@@ -9,7 +9,7 @@ import { IProperty } from '../IProperty.interface';
 })
 export class PropertyListComponent implements OnInit {
 
-  properties!: Array<IProperty>;
+  properties: Array<IProperty> = [];
 
   constructor(private housingService: HousingService) { }
 
@@ -23,12 +23,13 @@ export class PropertyListComponent implements OnInit {
     this.housingService.getAllProperties().subscribe(
         data=>{
         this.properties=data;
-        console.log(data)
+        console.log(data);
       }, error => {
         console.log('httperror:');
         console.log(error);
       }
     )
+    const master = 'Master';
   }
 
 }
