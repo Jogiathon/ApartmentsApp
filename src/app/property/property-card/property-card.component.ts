@@ -9,8 +9,10 @@ import { IProperty } from '../IProperty.interface';
   styleUrls: ['./property-card.component.css']
 })
 export class PropertyCardComponent {
-  @Input()
-  properties!: IProperty;
+
+  @Input('property')
+  Property!: IProperty;
+
 }
 
 

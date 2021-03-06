@@ -23,13 +23,11 @@ export class PropertyListComponent implements OnInit {
     this.housingService.getAllProperties().subscribe(
         data=>{
         this.properties=data;
-        console.log(data);
       }, error => {
         console.log('httperror:');
         console.log(error);
       }
     )
-    const master = 'Master';
   }
 
 }
