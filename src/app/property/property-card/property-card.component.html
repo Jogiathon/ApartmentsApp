@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-img-wrapper text-center">
-    <img class="propImg" src="assets/images/house_default.png">
+    <img *ngIf="Property.Image" class="propImg" src="assets/images/{{Property.Image}}.jpg">
+    <img *ngIf="!Property.Image" class="propImg" src="assets/images/house_default.png">
     <div class="list-inline-item text-center member-icons animate">
       <div class="card-body flex-column">
         <div class="btn-wrapper">
