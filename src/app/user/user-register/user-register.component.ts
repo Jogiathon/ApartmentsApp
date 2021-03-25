@@ -4,7 +4,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
-  styleUrls: ['./user-register.component.css']
+  styleUrls: ['./user-register.component.scss']
 })
 export class UserRegisterComponent implements OnInit {
 
@@ -24,6 +24,10 @@ export class UserRegisterComponent implements OnInit {
   private passwordMatchingValidator(fg: FormGroup)  {
     return fg.get('password')?.value === fg.get('confirmPassword')?.value ? null :
     {notmatched: true};
+  }
+
+  get userName() {
+    return this.registrationForm.get('userName') as FormControl;
   }
 
   onSubmit() {

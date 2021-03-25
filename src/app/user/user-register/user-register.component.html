@@ -11,24 +11,44 @@
             <input type="text" class="form-control"
               formControlName="userName"
             >
-            <span *ngIf="!registrationForm.controls.userName.valid && registrationForm.controls.userName.touched" class="error-block">
+            <span *ngIf="!registrationForm.controls.userName.valid && registrationForm.controls.userName.touched"
+            class="error-block">
               Please provide a name
           </span>
         </div>
-
         <div class="form-group col-12">
           <label for="email" class="form-label">Email</label>
           <input type="text" class="form-control" formControlName="email">
+          <span *ngIf="!registrationForm.controls.email.valid && registrationForm.controls.email.touched" class="error-block">
+            <span *ngIf="registrationForm.controls.email.hasError('required')">
+              Please provide an email
+            </span>
+            <span *ngIf="registrationForm.controls.email.hasError('email')">
+              Please provide a valid email
+            </span>
+          </span>
         </div>
-
         <div class="form-group col-12">
-          <label for="passwrod" class="form-label">Password</label>
+          <label for="password" class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="password">
+          <span *ngIf="!registrationForm.controls.password.valid && registrationForm.controls.password.touched" class="error-block">
+            <span *ngIf="registrationForm.controls.password.errors?.required">
+              Please provide a password
+            </span>
+            <span *ngIf="registrationForm.controls.password.errors?.minlength">
+              Password should be greater than 8 characters
+            </span>
+          </span>
         </div>
 
         <div class="form-group col-12">
           <label for="cpassword" class="form-label">Confirm Password</label>
           <input type="password" class="form-control" formControlName="confirmPassword">
+          <span *ngIf="!registrationForm.controls.confirmPassword.valid && registrationForm.controls.confirmPassword.touched" class="error-block">
+            <span *ngIf="registrationForm.controls.confirmPassword.errors?.required">
+              Please confirm password
+            </span>
+          </span>
         </div>
 
         <div class="form-group col-12">

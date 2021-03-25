@@ -129,5 +129,10 @@
       }
     }
   },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  },
   "defaultProject": "my-first-app"
 }
