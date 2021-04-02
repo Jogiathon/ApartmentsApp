@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserLoginComponent } from '../user-login/user-login.component';
 
 @Component({
   selector: 'app-user-register',
@@ -11,7 +12,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class UserRegisterComponent implements OnInit {
 
   registrationForm!: FormGroup;
-  user: any = {};
+  user!: User;//any = {};
   userSubmitted!: boolean;
 
   constructor(private formBuilder: FormBuilder, private userService: UserServiceService) { }
@@ -48,7 +49,7 @@ export class UserRegisterComponent implements OnInit {
     console.log(this.registrationForm);
     this.userSubmitted = true;
     if (this.registrationForm.valid) {
-      this.user = Object.assign(this.user, this.registrationForm.value);
+      //this.user = Object.assign(this.user, this.registrationForm.value);
       this.userService.addUser(this.userData());
       this.registrationForm.reset();
       this.userSubmitted = false;
@@ -63,7 +64,6 @@ export class UserRegisterComponent implements OnInit {
       mobile: this.mobile.value
     }
   }
-
 
   // --------------------------------------
   // Getter methods for all form controls
