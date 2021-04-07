@@ -31,12 +31,35 @@
           routerLinkActive="active"
           >Login</a>
         </li>
-        <li *ngIf="loggedin()" class="nav-item">
+        <!-- <li *ngIf="loggedin()" class="nav-item">
           <a class="nav-link" (click)="onLogout()"
           routerLink="user/login"
           routerLinkActive="active"
           >Logout</a>
-        </li>
+        </li> -->
+        <div *ngIf="loggedin()" class="dropdown mr-5" dropdown>
+          <a href="#" class="dropdown-toggle text-light" dropdownToggle (click)="false">
+            Welcome
+          </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-techometer-alt"></i>
+              ViewDashboard
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="far fa-user-circle"></i>
+              My Profile
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-key"></i>
+              Change Password
+            </a>
+            <a (click)='onLogout()' class="dropdown-item">
+              <i class ="fas fa-sign-out-alt"></i>
+              Logout
+            </a>
+          </div>
+        </div>
       </ul>
     </div>
   </div>
