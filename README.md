@@ -1,2 +1,2 @@
-# mvcpractice
-MVC Tutorial C# and ASP.net
+# Apartments
+MVC Project utilizing Angular frontend framework
