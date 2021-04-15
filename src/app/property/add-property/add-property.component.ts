@@ -11,6 +11,11 @@ import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
 export class AddPropertyComponent implements OnInit {
   @ViewChild('Form') addPropertyForm!: NgForm;
   @ViewChild('formTabs') formTabs!: TabsetComponent;
+
+
+  //Will come from masters
+  propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
+  furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfunished']
   constructor(private router: Router) { }
 
   ngOnInit() {
