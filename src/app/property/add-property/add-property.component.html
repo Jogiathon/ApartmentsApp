@@ -1,13 +1,13 @@
 <div class="row">
-  <div class="col-8">
+  <div class="col-8 shadow-lg p-0 bg-white">
     <div class="card">
       <div class="card-header">
         <h3>List your Property</h3>
       </div>
       <div class="card-body">
         <form (ngSubmit)='onSubmit()' #Form="ngForm">
-          <div>
-            <tabset #formTabs>
+          <div class="tab-panel">
+            <tabset class="member-tabset" #formTabs>
               <tab heading="Basic info">
                 <div class="form-group col-12">
                 <p>I want to</p>
@@ -32,13 +32,15 @@
 
                 <div class="form-group col-12">
                   <p>Property Type</p>
-                    <div class="btn-group" btnRadioGroup name=PropType>
+                    <div class="btn-group" btnRadioGroup name=PropType
+                      [(ngModel)]="propertyView.Type">
                       <label
                       *ngFor="let ptype of propertyTypes"
                       class="btn btn-outline-primary mr-2"
                       [btnRadio]="ptype"
                       role="button"
-                      name="proptype"
+                      tabindex="0"
+                      name="propType"
                       >{{ptype}}</label>
                     </div>
                   </div>
@@ -57,7 +59,7 @@
                   <label>in Building/Society/Project</label>
                   <input type="text" class="form-control"
                   #propName="ngModel"
-                  ngModel name="Name"
+                  ngModel name="propName"
                   required
                   minlength="5"
                   [(ngModel)]="propertyView.Name"
@@ -70,7 +72,14 @@
 
                 <div class="form-group col-12">
                   <label>City</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control"
+                  #cityName="ngModel"
+                  ngModel name="cityName"
+                  required
+                  >
+                  <div *ngIf="!cityName.valid && cityName.touched" class="error-block">
+                    <div *ngIf="cityName.errors?.required">Please provide a city</div>
+                  </div>
                 </div>
 
                 <div class="form-group col-12">
@@ -82,7 +91,8 @@
               <tab heading="Pricing and Area">
                 <div class="form-group col-12">
                   <label>Price (in USD)</label>
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" name="price"
+                  [(ngModel)]="propertyView.Price">
                 </div>
 
                 <div class="form-group col-12">
@@ -227,9 +237,12 @@
     </div>
   </div>
   <div class="col-4">
-    <div class="card-header"></div>
-    <h3>Your Property Preview</h3>
-    <app-property-card [property]="propertyView"></app-property-card>
+    <div class="card-header">
+      <h3>Your Property Preview</h3>
+    </div>
+    <div class="shadow-lg p-3 bg-white">
+      <app-property-card [property]="propertyView" [hideIcons]="true"></app-property-card>
+    </div>
   </div>
 </div>
 

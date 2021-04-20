@@ -2,7 +2,7 @@
   <div class="card-img-wrapper text-center">
     <img *ngIf="Property.Image" class="propImg" src="assets/images/{{Property.Image}}.jpg">
     <img *ngIf="!Property.Image" class="propImg" src="assets/images/house_default.png">
-    <div class="list-inline-item text-center member-icons animate">
+    <div *ngIf="!hideIcons" class="list-inline-item text-center member-icons animate">
       <div class="card-body flex-column">
         <div class="btn-wrapper">
           <button class="btn btn-primary" routerLink="/property-detail/{{Property.Id}}"><i class="far fa-edit"></i>
