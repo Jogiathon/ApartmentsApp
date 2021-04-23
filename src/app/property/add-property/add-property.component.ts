@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TabsetComponent } from 'ngx-bootstrap/tabs/public_api';
-import { IProperty } from '../IProperty.interface';
+import { IPropertyBase } from 'src/app/model/ipropertybase';
 
 
 @Component({
@@ -18,12 +18,17 @@ export class AddPropertyComponent implements OnInit {
   propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
   furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfunished']
 
-  propertyView: IProperty = {
+  propertyView: IPropertyBase = {
     Id: 0,
-    SellRent: 0,
     Name: "",
-    Type: "",
     Price: "",
+    SellRent: 0,
+    PType: "",
+    FType: "",
+    BHK: 0,
+    BuiltArea: 0,
+    City: "",
+    RTM: 0,
     Image: "",
   };
 
