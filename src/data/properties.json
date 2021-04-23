@@ -3,7 +3,7 @@
       "Id":1,
       "SellRent": 1,
       "Name":"Birla House",
-      "Type":"House",
+      "PType":"House",
       "Price":120000,
       "Image":"prop-1"
     },
@@ -11,7 +11,7 @@
       "Id":2,
       "SellRent": 2,
       "Name":"Geogie House",
-      "Type":"House",
+      "PType":"House",
       "Price":14000,
       "Image":"prop-2"
     },
@@ -19,7 +19,7 @@
       "Id":3,
       "SellRent": 1,
       "Name":"Cobra House",
-      "Type":"House",
+      "PType":"House",
       "Price":20000,
       "Image":"prop-3"
     },
@@ -27,7 +27,7 @@
       "Id":4,
       "SellRent": 1,
       "Name":"Mentos House",
-      "Type":"House",
+      "PType":"House",
       "Price":15600,
       "Image":"prop-4"
     },
@@ -35,7 +35,7 @@
       "Id":5,
       "SellRent": 1,
       "Name":"Finicky House",
-      "Type":"House",
+      "PType":"House",
       "Price":52000,
       "Image":"prop-5"
     },
@@ -43,7 +43,7 @@
       "Id":6,
       "SellRent": 1,
       "Name":"Sonic House",
-      "Type":"House",
+      "PType":"House",
       "Price":72000
     }
 ]

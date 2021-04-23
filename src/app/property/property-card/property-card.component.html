@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card-img-wrapper text-center">
-    <img *ngIf="Property.Image" class="propImg" src="assets/images/{{Property.Image}}.jpg">
-    <img *ngIf="!Property.Image" class="propImg" src="assets/images/house_default.png">
+    <img *ngIf="property.Image" class="propImg" src="assets/images/{{property.Image}}.jpg">
+    <img *ngIf="!property.Image" class="propImg" src="assets/images/house_default.png">
     <div *ngIf="!hideIcons" class="list-inline-item text-center member-icons animate">
       <div class="card-body flex-column">
         <div class="btn-wrapper">
-          <button class="btn btn-primary" routerLink="/property-detail/{{Property.Id}}"><i class="far fa-edit"></i>
+          <button class="btn btn-primary" routerLink="/property-detail/{{property.Id}}"><i class="far fa-edit"></i>
           </button>
           &nbsp;
           <button class="btn btn-primary"><i class="far fa-address-book"></i>
@@ -16,9 +16,9 @@
   </div>
 
   <div class="card-body p-2">
-    <h1>{{Property.Name}}</h1>
-    <h2>{{Property.PType}}</h2>
-    <h3>{{Property.Price}}</h3>
+    <h1>{{property.Name}}</h1>
+    <h2>{{property.PType}}</h2>
+    <h3>{{property.Price}}</h3>
   </div>
 </div>
 
