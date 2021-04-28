@@ -8,7 +8,7 @@
         <form (ngSubmit)='onSubmit()' #Form="ngForm">
           <div class="tab-panel">
             <tabset class="member-tabset" #formTabs>
-              <tab heading="Basic info" ngModelGroup="BasicInfo" #BasicInfo>
+              <tab heading="Basic info" ngModelGroup="BasicInfo" #BasicInfo="ngModelGroup">
                 <div class="form-group col-12">
                 <p>I want to</p>
                   <div class="btn-group" btnRadioGroup ngModel name="SellRent" required>
@@ -48,7 +48,8 @@
 
                 <div class="form-group col-12">
                   <p>Furnishing Type</p>
-                    <div class="btn-group" btnRadioGroup>
+                    <div class="btn-group" btnRadioGroup
+                      [(ngModel)]="propertyView.FType" name="FType">
                       <label
                       *ngFor="let ftype of furnishTypes"
                       class="btn btn-outline-primary mr-2"
@@ -87,7 +88,7 @@
 
                 <div class="form-group col-12">
                   <button type="button" class="btn btn-primary btn-block"
-                  (click)="selectTab(1)">Next</button>
+                  (click)="selectTab(1)" [disabled]="!BasicInfo.valid">Next</button>
                 </div>
               </tab>
 
