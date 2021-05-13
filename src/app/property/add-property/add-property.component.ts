@@ -48,11 +48,13 @@ export class AddPropertyComponent implements OnInit {
 
   CreateAddPropertyForm() {
     this.addPropertyForm = this.fb.group({
-      SellRent: [null, Validators.required],
-      PType: [null, Validators.required],
-      Name: [null, Validators.required],
-      Price: [null, Validators.required],
-      BuiltArea: [null, Validators.required]
+      SellRent: [0, Validators.required],
+      PType: ["", Validators.required],
+      Name: ["", Validators.required],
+      Price: ["", Validators.required],
+      BuiltArea: [0, Validators.required],
+      BHK: [0, Validators.required],
+      Ftype: ["", Validators.required]
     })
   }
 
