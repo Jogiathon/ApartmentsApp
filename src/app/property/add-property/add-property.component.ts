@@ -29,7 +29,7 @@ export class AddPropertyComponent implements OnInit {
     PType: "",
     FType: "",
     BHK: 0,
-    BuiltArea: 0,
+    BuiltArea: "",
     City: "",
     RTM: 0,
     Image: "",
@@ -50,11 +50,11 @@ export class AddPropertyComponent implements OnInit {
     this.addPropertyForm = this.fb.group({
       SellRent: [0, Validators.required],
       PType: ["", Validators.required],
+      FType: ["", Validators.required],
       Name: ["", Validators.required],
       Price: ["", Validators.required],
       BuiltArea: [0, Validators.required],
-      BHK: [0, Validators.required],
-      Ftype: ["", Validators.required]
+      BHK: [0, Validators.required]
     })
   }
 
@@ -65,7 +65,7 @@ export class AddPropertyComponent implements OnInit {
 
   onSubmit() {
     console.log('Congrats, form Submitted');
-    console.log('SellRent=' + this.addPropertyForm.value.BasicInfo.SellRent);
+    console.log('SellRent=' + this.addPropertyForm.value.SellRent);
     console.log(this.addPropertyForm);
   }
 
